@@ -16,8 +16,22 @@ The other advantage of UCT/MCTS over exhaustive simulation is that it is an onli
 
 <h1>Evaluation of Terminal States
 
-We handcrafted rewards to evaluate terminal states depending on the mode the agent was in - offence, return food (for offence), or defence. These evaluations were also shared with the exhaustive simulation approach. For offence, we used the remaining food, distance to nearest food, increase in score, and distance to nearest enemy as the evaluation metrics. For defence, we used the distance to nearest enemy and a bonus for eating a pacman, while giving it a bonus for lingering near the middle of the map if there were no visible enemies. For return, we used the distance to nearest border home square and the increase in score as incentive, and it would naturally avoid dying to prevent the distance from increasing.
+We handcrafted rewards to evaluate terminal states depending on the mode the agent was in - offence, return food (for offence), or defence. These evaluations were also shared with the exhaustive simulation approach. 
 
+For offence, we used : 
+- the remaining food
+- distance to nearest food
+- increase in score
+- distance to nearest enemy 
+
+For defence, we used : 
+- the distance to nearest enemy
+- bonus for eating a pacman
+- bonus for lingering near the middle of the map if there were no visible enemies
+
+For return : 
+- distance to nearest border home square (would naturally avoid dying to prevent the distance from increasing)
+- increase in score 
 
 <h1>Conclusion and Future Work
 
