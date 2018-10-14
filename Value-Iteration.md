@@ -1,4 +1,4 @@
-![map1](/uploads/559d8428282c4ac7d805d9cb6ced2cd8/map1.png)Prepared by Mustafa Neguib 9229393
+Prepared by Mustafa Neguib 9229393
 ==================================
 
 Value Iteration Wiki
@@ -64,8 +64,9 @@ into pacman. The same applies for the red team. When the agents of the red team
 cross the half line, they turn into pacman and when they return to their half
 they turn back into ghosts.
 
-![](media/7dc082bcb5c77cff54f8e3c467fc287e.png)
+![map5](/uploads/8a6ddf4ed6eb3f81e68a9ee337dde46e/map5.png)
 
+![Screenshot__118_](/uploads/bce3b0b8ca26d466957ac5fe3953ff67/Screenshot__118_.png)
 Figure 1: Map used for planning and visualization
 
 In the first approach let us assume that we are the blue team, and our agents
@@ -83,7 +84,7 @@ actual map is only available while the game is actually being played, the map
 shown earlier is quite useful in helping us visualize what is happening and what
 we want to implement.
 
-![](media/635da0290846d3383980cd4b62c7c011.png)
+![Screenshot__118_](/uploads/0dc36ec06da5c0ea3f55f27322515159/Screenshot__118_.png)
 
 Figure 2: Actual map in play
 
