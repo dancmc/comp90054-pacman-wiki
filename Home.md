@@ -1,3 +1,5 @@
+<h2> Table Of Contents
+
 [1. Team Members](Team members)
 
 [2. Value Iteration](Value iteration)
