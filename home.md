@@ -1,6 +1,7 @@
 [1. Team Members](Team members)
 
 [2. Value Iteration](Value iteration)
+
 [3. Random Simulation](Random simulation)
 [4. UCT](Uct)
 [5. Exhaustive simulation](Exhaustive simulation)
