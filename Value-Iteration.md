@@ -54,7 +54,8 @@ For planning and visualization purposes we have used the following map. The map
 is divided into two halves and the half line is the half line shown in
 column 15 by dark green and dark brown cells. The brown cells, marked with “T”
 are walls, while the light green marked with “F” are empty spaces where the
-agent can move into. Walls block of access to different areas, while they guide the agent into other areas depending on where they are placed.
+agent can move into. Walls block of access to different areas, while they guide
+the agent into other areas depending on where they are placed.
 
 The right half is the home side of the blue team, while the left half is the
 home side of the red team. The agents of the blue team on the right half will
@@ -70,7 +71,7 @@ Figure 1: Map used for planning and visualization
 In the first approach let us assume that we are the blue team, and our agents
 start from locations (30,14) and (30,13) respectively. The agents play as
 offensive, and defensive, where the aim of the offensive agent is to conduct
-raids into the other team’s half and try to eat as many dots (shown as gray
+raids into the other team’s half and try to eat as many dots (shown as grey
 cells in the left half of the map) it can and to return to its own half and
 deposit them, gaining points for its team. The aim of the defensive agent is to
 prevent the offensive agent (Pacman) of the other team to raid and eat the dots
@@ -133,7 +134,10 @@ the currently selected food item and to try and move the agent away from the
 original food item hoping that it can find a path to another dot. However, we
 then found out that the Pacman does stop oscillating, but then falls back into
 the oscillation as it looks for the closest dot and finds the original offending
-dot again and gets stuck in the oscillation again.
+dot again and gets stuck in the oscillation again. Another problem that we encountered
+was that since the closest dot is searched for at every turn and we are using Manhattan Distance,
+so there is a possibility that we may not find a dot that is actually close to our agent and
+instead go after one which is far away.
 
 ![map3](/uploads/5c1a75e60b6ba2e4123befbe9010bd7d/map3.png)
 
