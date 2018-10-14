@@ -5,4 +5,4 @@ This was very similar to simulations as carried out in MCTS. The thought was tha
 <h1>Issues with Exhaustive Simulation
 
 However, we later realised the flaw as compared with UCT (discussed on the UCT page), where promising branches were diluted by directly averaging with less promising branches from the same parent branch. In head to head testing, this approach consistently beat the baseline agent and the q learning agent, but mostly lost to the UCT agent (as expected).
-
+![Screen_Shot_2018-10-15_at_12.56.54_am](/uploads/1ad483b1c9f731d151ccd8b397c563d2/Screen_Shot_2018-10-15_at_12.56.54_am.png)
