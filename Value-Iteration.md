@@ -64,9 +64,8 @@ into pacman. The same applies for the red team. When the agents of the red team
 cross the half line, they turn into pacman and when they return to their half
 they turn back into ghosts.
 
-![map5](/uploads/8a6ddf4ed6eb3f81e68a9ee337dde46e/map5.png)
+![](media/7dc082bcb5c77cff54f8e3c467fc287e.png)
 
-![Screenshot__118_](/uploads/bce3b0b8ca26d466957ac5fe3953ff67/Screenshot__118_.png)
 Figure 1: Map used for planning and visualization
 
 In the first approach let us assume that we are the blue team, and our agents
@@ -84,7 +83,7 @@ actual map is only available while the game is actually being played, the map
 shown earlier is quite useful in helping us visualize what is happening and what
 we want to implement.
 
-![Screenshot__118_](/uploads/0dc36ec06da5c0ea3f55f27322515159/Screenshot__118_.png)
+![](media/635da0290846d3383980cd4b62c7c011.png)
 
 Figure 2: Actual map in play
 
@@ -93,7 +92,7 @@ Approach 1: Calculating the Value Iteration on a subset of the map at every turn
 
 Our agents are located at (30,13) and (30,14). In this strategy, the offensive
 agent is to be first moved towards the half line. Then as soon as it crosses the
-half-line it turns into a Pacman, and then the closest dot is searched for and
+half line it turns into a pacman, and then the closest dot is searched for and
 is from where the value iteration calculations are to be performed. Essentially
 the closest dot is given a positive V(s) value while the rest of the locations
 between the agent’s location and the dot’s location are given the V(s) value of
@@ -103,15 +102,15 @@ value for every location and then return an action all within the time limit.
 
 The darkened area shows the columns whole locations for whom we want to
 calculate the V(s) values. If you notice that we also have included the column
-to the right of the agent. This has been done so that in the future if an agent
-needs to move backwards if it needs to, can do so easily.
+to the right of the agent. This has been done so that in the future, if an agent
+needs to move backwards if it need to, can do so easily.
 
-![map1](/uploads/13a84f29fb568dedb4f1b4ec64d4cba0/map1.png)
+![](media/b99839161aea1431ef70adb3676ce770.png)
 
 As the agent moves forward, the shaded area will also move forward along with
 the agent.
 
-![map2](/uploads/80e3e2327b3bcd5789ec51638adf10e7/map2.png)
+![](media/6e2eb9b65a20fbbbd08cffd19f8f5437.png)
 
 The above map shows the shaded area moved one column to the left. The advantage
 of this technique is that we do not perform a lot of calculations, which keeps
@@ -120,14 +119,14 @@ the execution time quite low and also returns the action much quicker.
 However, there are also problems with this approach. Firstly, since we are only
 looking at a small area, we do not find the optimal path which might be
 available in the map, but not in the shaded area. Secondly, once the agent
-crosses the half line and becomes a Pacman it has to search for the closest
-food. Suppose the Pacman is at location (9,6) and the target dot is at (9,11).
+crosses the half line and becomes a pacman it has to search for the closest
+food. Suppose the pacman is at location (9,6) and the target dot is at (9,11).
 Assume that the dots near the location (9,6) have already been eaten by the
-Pacman. Now as we can see, in order to each (9,11) from (9,6) we can not find
+pacman. Now as we can see, in order to each (9,11) from (9,6) we can not find
 any such path because the path (location cells) that fall on the path are not
 
-Included in the shaded area, hence the food item cannot be reached using this
-strategy and the Pacman will start to get stuck and oscillate within two
+Included in the shaded area, hence the food item can not be reached using this
+strategy, and the pacman will start to get stuck and oscillate within two
 locations repeatedly and will have to use other techniques to help move the
 pacman into some other direction. One way to solve this is to increase the size
 of the shaded area, but then we will have to perform that many calculations
@@ -135,7 +134,7 @@ which will further cause problems which we do not want in the first place. To
 handle this situation, what we did was to randomly select a food item other than
 the currently selected food item and to try and move the agent away from the
 original food item hoping that it can find a path to another dot. However, we
-then found out that the Pacman does stop oscillating, but then falls back into
+then found out that the pacman does stop oscillating, but then falls back into
 the oscillation as it looks for the closest dot and finds the original offending
 dot again and gets stuck in the oscillation again.
 
@@ -162,7 +161,7 @@ location cells are given a value of 0.
 The next decision that we have to make is how to decide which location cells
 will be given to the algorithm to calculate the V(s) values.
 
-Initially, we had implemented a column-wise approach. Suppose the target dot from
+Initially we had implemented a column wise approach. Suppose the target dot from
 where we want to start the calculations from is at (5,1) as shown in the
 following map in highlighted in red.
 
