@@ -64,7 +64,7 @@ into pacman. The same applies for the red team. When the agents of the red team
 cross the half line, they turn into pacman and when they return to their half
 they turn back into ghosts.
 
-![](media/7dc082bcb5c77cff54f8e3c467fc287e.png)
+![map5](/uploads/57e0c0c966616d7adb03f26c9aa7068c/map5.png)
 
 Figure 1: Map used for planning and visualization
 
@@ -83,8 +83,7 @@ actual map is only available while the game is actually being played, the map
 shown earlier is quite useful in helping us visualize what is happening and what
 we want to implement.
 
-![](media/635da0290846d3383980cd4b62c7c011.png)
-
+![Screenshot__118_](/uploads/249e32d764772b9b322d089a54b950f2/Screenshot__118_.png)
 Figure 2: Actual map in play
 
 Approach 1: Calculating the Value Iteration on a subset of the map at every turn
@@ -105,12 +104,11 @@ calculate the V(s) values. If you notice that we also have included the column
 to the right of the agent. This has been done so that in the future, if an agent
 needs to move backwards if it need to, can do so easily.
 
-![](media/b99839161aea1431ef70adb3676ce770.png)
+![map1](/uploads/3be9e999c966fa309c883cc67b9ac31d/map1.png)
 
 As the agent moves forward, the shaded area will also move forward along with
 the agent.
-
-![](media/6e2eb9b65a20fbbbd08cffd19f8f5437.png)
+![map2](/uploads/c2137441a5ae416d95ff8ad8ed64ed36/map2.png)
 
 The above map shows the shaded area moved one column to the left. The advantage
 of this technique is that we do not perform a lot of calculations, which keeps
@@ -138,7 +136,7 @@ then found out that the pacman does stop oscillating, but then falls back into
 the oscillation as it looks for the closest dot and finds the original offending
 dot again and gets stuck in the oscillation again.
 
-![](media/01173cf5f3b2298e18143eccd646a8fc.png)
+![map3](/uploads/5c1a75e60b6ba2e4123befbe9010bd7d/map3.png)
 
 The problem with such an approach is that due to the way the shaded are moves,
 we encounter many situations where we have to manually implement fixes to
@@ -156,16 +154,16 @@ This approach considers the whole of the map. Now the dots past the half line in
 the opponent’s half are set as having positive V(s) while the rest of the
 location cells are given a value of 0.
 
-![](media/97378487013cfe4261fc0fcd6c05b56b.png)
+![map4](/uploads/3ff60e6501c4745ee030fb0e12ad3e1e/map4.png)
 
 The next decision that we have to make is how to decide which location cells
 will be given to the algorithm to calculate the V(s) values.
 
-Initially we had implemented a column wise approach. Suppose the target dot from
+Initially, we had implemented a column wise approach. Suppose the target dot from
 where we want to start the calculations from is at (5,1) as shown in the
 following map in highlighted in red.
 
-![](media/586ffea6ba3ff8b26c8639e10a87ef6e.png)
+![map5](/uploads/acd7fdf3c34c57d46ca8e1be083c99ee/map5.png)
 
 The algorithm works backwards from the target location column by column and goes
 till the whole of the map has been covered. This also has problems and it turns
