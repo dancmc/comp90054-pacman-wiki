@@ -136,11 +136,6 @@ then found out that the Pacman does stop oscillating, but then falls back into
 the oscillation as it looks for the closest dot and finds the original offending
 dot again and gets stuck in the oscillation again.
 
-Another problem that we encountered was that since the closest dot is searched for at 
-every turn and we are using Manhattan Distance, so there is a possibility that we may 
-not find a dot that is actually close to our agent and instead, goes after one which may be
-far away.
-
 ![map3](/uploads/5c1a75e60b6ba2e4123befbe9010bd7d/map3.png)
 
 The problem with such an approach is that due to the way the shaded are moves,
@@ -151,6 +146,8 @@ tinkering to just make the agent go towards the food and eat it. There are many
 other situations that we had not implemented yet which would have further made
 things more challenging and problematic and also be the cause of unforeseen
 errors.
+
+Another problem that was caused due to this was that due to the extra logic that we had to add in order to handle the edge cases the closest dot that was being returned was not in fact the closest dot from the current location searched for at every turn, so there is a possibility that we may not find a dot that is actually close to our agent and instead go after one which is far away.
 
 Approach 2: Calculating Value Iteration on the whole map at every turn
 ----------------------------------------------------------------------
