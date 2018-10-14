@@ -15,9 +15,9 @@ Approach 2:
 <https://gitlab.eng.unimelb.edu.au/mneguib/comp90054-pacman-922939/tree/valueIteration>
 
 We had selected Value Iteration as one of the approaches because it mainly
-seemed logical to do so. What we mean by logical is that, at every turn we can
+seemed logical to do so. What we mean by logical is that at every turn we can
 calculate the V(s) values of the cells(locations) based on the state of the map.
-We assigned negative rewards to the actions, and assigned positive V(s) values
+We assigned negative rewards to the actions and assigned positive V(s) values
 to the target locations such as food locations, etc…
 
 However, once we started to plan out the implementation, we had doubts that
@@ -30,38 +30,37 @@ Restrictions that further limited what we could do
 
 Firstly, we were restricted by a time limit as well at every turn. We had a
 limit of 1 second by the time which we had to return an action, and if we exceed
-this time will receive a warning. Eventually receiving 3 such warnings, or the
+this time will receive a warning. Eventually receiving 3 such warnings or the
 decision to which action to take takes more than 3 seconds results in forfeiture
 or the game.
 
-Next, since the state changes after every turn, we can not train before hand and
+Next, since the state changes after every turn, we can not train before-hand and
 use learned V(s) for the states. In addition, in the contest a random map will
 also be played, which is not known to us, so as a result training will not work,
-therefore all the calculations have to be performed at run time.
+therefore all the calculations have to be performed at run-time.
 
 Design of the approaches
 ------------------------
 
-In order to implement value iteration, we looked at two designs, and tried to
+In order to implement value iteration, we looked at two designs and tried to
 implement them. Both had their respective problems and challenges which
-prevented us from coming to a complete solution, and eventually had to abandon
-value iteration all together.
+prevented us from coming to a complete solution and eventually had to abandon
+value iteration altogether.
 
 The first approach that we looked at and implemented consisted of a number of
 different approaches. We will explain the main idea through an illustration.
 
 For planning and visualization purposes we have used the following map. The map
-is divided into two halves and the half line is the half line shown in the
+is divided into two halves and the half line is the half line shown in
 column 15 by dark green and dark brown cells. The brown cells, marked with “T”
 are walls, while the light green marked with “F” are empty spaces where the
-agent can move into. Walls block of access to different areas, while they are
-guide the agent into other areas depending on where they are placed.
+agent can move into. Walls block of access to different areas, while they guide the agent into other areas depending on where they are placed.
 
 The right half is the home side of the blue team, while the left half is the
 home side of the red team. The agents of the blue team on the right half will
 play as ghosts, and as soon as they cross the half line at column 15 they turn
-into pacman. The same applies for the red team. When the agents of the red team
-cross the half line, they turn into pacman and when they return to their half
+into Pacman. The same applies to the red team. When the agents of the red team
+cross the half line, they turn into Pacman and when they return to their half
 they turn back into ghosts.
 
 ![map5](/uploads/57e0c0c966616d7adb03f26c9aa7068c/map5.png)
@@ -74,9 +73,9 @@ offensive, and defensive, where the aim of the offensive agent is to conduct
 raids into the other team’s half and try to eat as many dots (shown as gray
 cells in the left half of the map) it can and to return to its own half and
 deposit them, gaining points for its team. The aim of the defensive agent is to
-prevent the offensive agent (pacman) of the other team to raid and eat the dots
-in the opposing team’s half. In the above map the gray cells are the dots that
-our pacman agent will have to eat during one of its raids.
+prevent the offensive agent (Pacman) of the other team to raid and eat the dots
+in the opposing team’s half. In the above map, the grey cells are the dots that
+our Pacman agent will have to eat during one of its raids.
 
 The following is an actual map that is shown when the game is played. Since the
 actual map is only available while the game is actually being played, the map
@@ -91,7 +90,7 @@ Approach 1: Calculating the Value Iteration on a subset of the map at every turn
 
 Our agents are located at (30,13) and (30,14). In this strategy, the offensive
 agent is to be first moved towards the half line. Then as soon as it crosses the
-half line it turns into a pacman, and then the closest dot is searched for and
+half-line it turns into a Pacman, and then the closest dot is searched for and
 is from where the value iteration calculations are to be performed. Essentially
 the closest dot is given a positive V(s) value while the rest of the locations
 between the agent’s location and the dot’s location are given the V(s) value of
@@ -101,8 +100,8 @@ value for every location and then return an action all within the time limit.
 
 The darkened area shows the columns whole locations for whom we want to
 calculate the V(s) values. If you notice that we also have included the column
-to the right of the agent. This has been done so that in the future, if an agent
-needs to move backwards if it need to, can do so easily.
+to the right of the agent. This has been done so that in the future if an agent
+needs to go back if it needs to, can do so easily.
 
 ![map1](/uploads/3be9e999c966fa309c883cc67b9ac31d/map1.png)
 
@@ -117,14 +116,14 @@ the execution time quite low and also returns the action much quicker.
 However, there are also problems with this approach. Firstly, since we are only
 looking at a small area, we do not find the optimal path which might be
 available in the map, but not in the shaded area. Secondly, once the agent
-crosses the half line and becomes a pacman it has to search for the closest
-food. Suppose the pacman is at location (9,6) and the target dot is at (9,11).
+crosses the half line and becomes a Pacman it has to search for the closest
+food. Suppose the Pacman is at location (9,6) and the target dot is at (9,11).
 Assume that the dots near the location (9,6) have already been eaten by the
-pacman. Now as we can see, in order to each (9,11) from (9,6) we can not find
+Pacman. Now as we can see, in order to each (9,11) from (9,6) we can not find
 any such path because the path (location cells) that fall on the path are not
 
-Included in the shaded area, hence the food item can not be reached using this
-strategy, and the pacman will start to get stuck and oscillate within two
+Included in the shaded area, hence the food item cannot be reached using this
+strategy and the Pacman will start to get stuck and oscillate within two
 locations repeatedly and will have to use other techniques to help move the
 pacman into some other direction. One way to solve this is to increase the size
 of the shaded area, but then we will have to perform that many calculations
@@ -132,7 +131,7 @@ which will further cause problems which we do not want in the first place. To
 handle this situation, what we did was to randomly select a food item other than
 the currently selected food item and to try and move the agent away from the
 original food item hoping that it can find a path to another dot. However, we
-then found out that the pacman does stop oscillating, but then falls back into
+then found out that the Pacman does stop oscillating, but then falls back into
 the oscillation as it looks for the closest dot and finds the original offending
 dot again and gets stuck in the oscillation again.
 
@@ -159,9 +158,9 @@ location cells are given a value of 0.
 The next decision that we have to make is how to decide which location cells
 will be given to the algorithm to calculate the V(s) values.
 
-Initially, we had implemented a column wise approach. Suppose the target dot from
+Initially, we had implemented a column-wise approach. Suppose the target dot from
 where we want to start the calculations from is at (5,1) as shown in the
-following map in highlighted in red.
+following map are highlighted in red.
 
 ![map5](/uploads/acd7fdf3c34c57d46ca8e1be083c99ee/map5.png)
 
@@ -169,17 +168,17 @@ The algorithm works backwards from the target location column by column and goes
 till the whole of the map has been covered. This also has problems and it turns
 out that even though the values are calculated and populated, they are sorted in
 increasing size from top of the column to the bottom of the column. Once these
-values have been calculated we the look for the appropriate action to take, and
+values have been calculated we then look for the appropriate action to take, and
 this works by moving to the cell with a larger value than the current location
 cell’s value. The problem with this is that once the agent moves down to (30,1)
 and then moves to (28,1) it can not move upwards towards (28,5) because the
 values are in an increasing order from top to bottom and not from bottom to top
-as the agent needs. At this point the agent can not use plain value iteration to
+as the agent needs. At this point, the agent cannot use plain value iteration to
 figure out which action it has to take to reach to the next location on the
 path.
 
 Armed with the knowledge of this problem, we then decided to instead get the
-legal neighbors, or the actual neighbors form the target state to the agent’s
+legal neighbours, or the actual neighbors form the target state to the agent’s
 location, and this was to be done by using Breadth First Search. This would
 explore the whole of the map and return the paths where the agent can go and
 this would also help us in calculating the V(s) values. This worked, and we had
@@ -187,11 +186,11 @@ retrieved a list of all accessible locations from each of the opponent’s dot
 which was a target and had a positive V(s) value.
 
 The problem lay when we were to actually calculate the V(s) values for all of
-the locations in the lists. In this particular map we have 248 location cells
+the locations in the lists. In this particular map, we have 248 location cells
 where the agent can go, so as a result in order to have all of the location
 cells to have V(s) values (though not optimal) we will have to run the Value
 Iteration algorithm 248 times for each of the enemy dots(targets) (23 in total).
-This bring the number of calculations needed to 5704. If we did not have a time
+This brings the number of calculations needed to 5704. If we did not have a time
 limit at every turn, then we could have used this approach, but unfortunately
 due to this restriction, the time it takes the calculations to complete exceeds
 this limit by many factors (give time taken here).
