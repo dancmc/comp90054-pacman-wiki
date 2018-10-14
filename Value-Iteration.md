@@ -134,10 +134,11 @@ the currently selected food item and to try and move the agent away from the
 original food item hoping that it can find a path to another dot. However, we
 then found out that the Pacman does stop oscillating, but then falls back into
 the oscillation as it looks for the closest dot and finds the original offending
-dot again and gets stuck in the oscillation again. Another problem that we encountered
-was that since the closest dot is searched for at every turn and we are using Manhattan Distance,
-so there is a possibility that we may not find a dot that is actually close to our agent and
-instead go after one which is far away.
+dot again and gets stuck in the oscillation again.
+Another problem that we encountered was that since the closest dot is searched for at 
+every turn and we are using Manhattan Distance, so there is a possibility that we may 
+not find a dot that is actually close to our agent and instead, goes after one which may be
+far away.
 
 ![map3](/uploads/5c1a75e60b6ba2e4123befbe9010bd7d/map3.png)
 
