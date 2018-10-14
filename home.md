@@ -1,4 +1,4 @@
-<h1>Table Of Contents
+<h2>Table Of Contents
 
 [1. Team Members](Team members)
 
