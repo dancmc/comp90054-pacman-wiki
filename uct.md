@@ -2,6 +2,7 @@
 Link to branch :
 
 <h1>Basis for MCTS/UCT
+
 The UCT approach is based on MCTS, which runs multiple simulations to determine the action with the highest average reward. Every round starts at the root node, then a policy (UCB) is used to select an action leading to s’. If s’ is a leaf node, it is expanded and then a simulation is run from it, with the reward backpropagated. If s’ is terminal, a reward is directly calculated and backpropagated. If s’ is not a leaf, then UCB is applied to find another s’.
 
 Simulations were run to a depth of 4, then a reward was calculated for the end state and backpropagated. For example, if the leaf node was at depth 3, a simulation was run from it for 1 more step. We also defined terminal nodes as nodes with a depth of 4. The advantage of UCT is that it tries to balance exploration and exploitation, and will return the arm with the best potential reward, as compared with the exhaustive simulation technique which would return the average reward of all the paths from that arm. 
