@@ -1,3 +1,6 @@
+<h3>Link to files :  
+sda
+
 <h1>Exhaustive Simulation
 
 This was very similar to simulations as carried out in MCTS. The thought was that instead of sampling paths as in MCTS, we could exhaustively search all paths of length 4 from the current point, evaluate the terminal state, and backpropagate the result. As with MCTS, this would give values & simulation numbers for each direct child from the root node/current state, enabling us to choose the next action. The evaluation metric for the value of the terminal state is also discussed on the UCT page. This approach was the first one we tried that worked well (before MCTS and UCT), and in the preliminary competition with about half the teams participating actually outranked the staff top team. 
