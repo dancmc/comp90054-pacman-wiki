@@ -1,6 +1,9 @@
-<h1>UCT Wiki
+<h1>Link to files
 
-Link to branch :
+The UCT agent inherits from BaseAgent which inherits from CaptureAgent
+- Base Agent : https://gitlab.eng.unimelb.edu.au/mneguib/comp90054-pacman-922939/blob/daniel/pacman-contest/agentBase.py
+- Search class : https://gitlab.eng.unimelb.edu.au/mneguib/comp90054-pacman-922939/blob/daniel/pacman-contest/agentSearch.py
+- UCT agent : https://gitlab.eng.unimelb.edu.au/mneguib/comp90054-pacman-922939/blob/daniel/pacman-contest/agentMCTS.py
 
 <h1>Basis for MCTS/UCT
 
