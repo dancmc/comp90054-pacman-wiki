@@ -14,7 +14,7 @@ In a game like Freeway, there would be 4 weight vectors, for example [Up1, Up2�
 
 <h1>Features and Rewards
 
-We went through the project at http://ai.berkeley.edu/reinforcement.html, and our code structure is based on that, which is also the same algorithm as taught in lectures. For a given Q(a,s), the features are based on s’ and are as follows :
+We went through the project at http://ai.berkeley.edu/reinforcement.html, and our code structure is based on that, which is also the same algorithm as taught in lectures. For a given Q(a,s), the features are based on s’. The features we thought were useful are as follows :
 - number of ghosts 1 step away or less : will die if the ghost’s next move is towards us
 - number of ghosts 2 steps away
 - number of scared ghosts 1 step away or less
@@ -23,7 +23,7 @@ We went through the project at http://ai.berkeley.edu/reinforcement.html, and ou
 - 1 - (distance to nearest capsule scaled between 0 and 1) : this term is higher the closer we get to a capsule, but only activated if a ghost is nearby
 - free bias term of 1.0
 
-We also designed shaped rewards for the update function :
+We also designed shaped rewards for the update function to augment the sparse rewards :
 - bonus for decrease in remaining food
 - bonus for increase in score
 - bonus for decrease in distance to nearest food
