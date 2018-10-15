@@ -4,7 +4,7 @@
 | header 1 | header 2 | header 1 | header 2 | header 2 |
 | -------- | -------- | -------- | -------- | -------- |
 | cell 3   | cell 4   | cell 3   | cell 4   | cell 4   |
-| cell 3   | cell 4   | cell 3  s  | cell 4   | cell 4   |
+| cell 3   | cell 4   | cell 3   | cell 4   | cell 4   |
 | cell 3   | cell 4   | cell 3   | cell 4   | cell 4   |
 ```
 
