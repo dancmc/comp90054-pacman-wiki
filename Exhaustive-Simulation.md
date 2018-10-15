@@ -1,6 +1,6 @@
 <h1>Link to files
 
-
+The exhaustive sim agent inherits from BaseAgent which inherits from CaptureAgent
 - Base Agent : https://gitlab.eng.unimelb.edu.au/mneguib/comp90054-pacman-922939/blob/daniel/pacman-contest/agentBase.py
 - Search class : https://gitlab.eng.unimelb.edu.au/mneguib/comp90054-pacman-922939/blob/daniel/pacman-contest/agentSearch.py
 - Exhaustive Simulation agent : https://gitlab.eng.unimelb.edu.au/mneguib/comp90054-pacman-922939/blob/daniel/pacman-contest/agentExhaustive.py
