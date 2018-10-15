@@ -3,9 +3,9 @@
 
 |          | Baseline | Exhaustive | UCT | Approx Q |
 | -------- | -------- | -------- | -------- | -------- |
-| cell 3   | cell 4   | cell 3   | cell 4   | cell 4   |
-| cell 3   | cell 4   | cell 3   | cell 4   | cell 4   |
-| cell 3   | cell 4   | cell 3   | cell 4   | cell 4   |
+| Exhaustive   | cell 4   | cell 3   | cell 4   | cell 4   |
+| UCT  | cell 4   | cell 3   | cell 4   | cell 4   |
+| Approx Q   | cell 4   | cell 3   | cell 4   | cell 4   |
 
 
 <h1>Final Agent
