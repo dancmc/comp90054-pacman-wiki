@@ -1,6 +1,6 @@
-<h1>Link to files :
+<h1>Link to files
 
-- sda
+sda
 
 <h1>Exhaustive Simulation
 
