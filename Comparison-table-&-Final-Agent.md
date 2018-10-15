@@ -1,6 +1,7 @@
 <h1>Table
 
 Win rate of the 3 candidate agents against each other and baselineTeam
+
 |          | Baseline | Exhaustive | UCT | Approx Q |
 | -------- | -------- | -------- | -------- | -------- |
 | Exhaustive   | cell 4   | cell 3   | cell 4   | cell 4   |
