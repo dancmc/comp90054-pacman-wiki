@@ -14,6 +14,6 @@
 
 [6. Approximate Q Learning](Approximate q learning)
 
-[7. Comparison Table](Comparison table)
+[7. Comparison Table](Comparison table & final agent)
 
 [8. Video Link](Video Link)
