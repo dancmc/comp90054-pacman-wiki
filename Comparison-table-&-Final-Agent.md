@@ -1,12 +1,12 @@
 <h1>Table
 
-```
+
 | header 1 | header 2 | header 1 | header 2 | header 2 |
 | -------- | -------- | -------- | -------- | -------- |
 | cell 3   | cell 4   | cell 3   | cell 4   | cell 4   |
 | cell 3   | cell 4   | cell 3   | cell 4   | cell 4   |
 | cell 3   | cell 4   | cell 3   | cell 4   | cell 4   |
-```
+
 
 <h1>Final Agent
 
