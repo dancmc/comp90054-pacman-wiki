@@ -1,12 +1,12 @@
 <h1>Table
 
-Win rate of the 3 candidate agents against each other and baselineTeam
+Win/Tie rate of the 3 candidate agents against each other and baselineTeam
 
 |          | Baseline | Exhaustive | UCT | Approx Q |
 | -------- | -------- | -------- | -------- | -------- |
-| Exhaustive   | cell 4   | cell 3   | cell 4   | cell 4   |
-| UCT  | cell 4   | cell 3   | cell 4   | cell 4   |
-| Approx Q   | cell 4   | cell 3   | cell 4   | cell 4   |
+| Exhaustive   | 100   | -   | 0   | 100   |
+| UCT  | 100   | 100   | -   | 80   |
+| Approx Q   | 100   | 0   | 20   | -   |
 
 
 <h1>Final Agent
