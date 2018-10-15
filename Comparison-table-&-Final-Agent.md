@@ -11,6 +11,8 @@ Win/Tie rate of the 3 candidate agents against each other and baselineTeam
 
 <h1>Final Agent
 
+Link to final agent : https://gitlab.eng.unimelb.edu.au/mneguib/comp90054-pacman-922939/tree/8068464c84d507346eda7f1d7fa789ecf1b8bc79
+
 As stated in the UCT/Q learning pages, the UCT agent performed best in the head to head trials, as expected. Approx Q would likely have prevailed given enough time to train and also tweak the rewards/features.
 
 We were originally going to submit our UCT agent based on the results above. However, the assignment was extended at the last minute to accommodate a re-run of the last pre-competition, and we used that to test our Q learning agent with pre-learned weights (with learning switched off).
