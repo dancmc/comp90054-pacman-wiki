@@ -36,10 +36,14 @@ The features were designed to try and compare future states based on benefit vs 
 
 The agent behaved remarkably well even at the beginning with simple weights, and was able to reliably beat the baseline agent within 1 or 2 games. However, it did not perform as well against our other agents, and did not learn to reliably beat either UCT or MCTS. This was possibly because we were unable to play enough training games, but also likely because alpha and the shaped rewards were not optimised.
 
-<h1> Issues and Future work
+<h1>Issues and Future work
 
 The main issue was in generating useful features, and also in giving appropriate rewards to cause eventual convergence to optimal Q. Because rewards are relatively sparse, there is a need to create shaped rewards, which has the potential to actually cause weights to diverge instead.
 
 Future directions would include playing far more games against a variety of agents, as well as experimenting with many other values of alpha and shaped rewards. The difficulty in this is that in a basic implementation, games must be played sequentially in order to update the weights, and finding optimal alpha and shaped rewards through grid search or similar would take an inordinate amount of time. However, it might also be possible to play many games in parallel using any agents, then run the Q agent through the game histories, updating weights only when an action is taken that matches what the Q learner would have played. This would speed up training considerably.
 
 Deep Q learning might be an alternative, but was beyond the scope of this project.
+
+<h1>Running the Agent
+
+By default, if createTeam is called on the agent, it has a non-zero alpha and epsilon. This needs to be manually set to 0 if no further learning is desired.
